@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: Bot</title>
+
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./bot_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="bot.rb">bot.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-farewell">#farewell</a></li>
+          
+          <li><a href="#method-i-greeting">#greeting</a></li>
+          
+          <li><a href="#method-i-response_to">#response_to</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./Bot.html">Bot</a></li>
+        
+          <li><a href="./BotServlet.html">BotServlet</a></li>
+        
+          <li><a href="./String.html">String</a></li>
+        
+          <li><a href="./TestWordPlay.html">TestWordPlay</a></li>
+        
+          <li><a href="./WordPlay.html">WordPlay</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Bot</h1>
+
+    <div id="description" class="description">
+      
+<p>A basic implementation of a chatterbot</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="name-attribute-method" class="method-detail">
+          <a name="name"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">name</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Initializes the bot object, loads in the external YAML data file and sets
+the bot’s name. Raises an exception if the data loading process fails.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File bot.rb, line 10</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;Unnamed Bot&quot;</span>
+<span class="ruby-keyword">begin</span>
+  <span class="ruby-ivar">@data</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:data_file</span>]))
+<span class="ruby-keyword">rescue</span>
+<span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Can't load bot data&quot;</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="farewell-method" class="method-detail ">
+          <a name="method-i-farewell"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">farewell</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a random farewell message as specified in the bot’s # data file</p>
+            
+
+            
+            <div class="method-source-code" id="farewell-source">
+<pre>
+<span class="ruby-comment"># File bot.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">farewell</span>
+  <span class="ruby-comment">#@data[:responses][:farewell][rand(@data[:responses][:farewell].length)]</span>
+  <span class="ruby-identifier">random_response</span> <span class="ruby-value">:farewell</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- farewell-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- farewell-method -->
+
+      
+        <div id="greeting-method" class="method-detail ">
+          <a name="method-i-greeting"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">greeting</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a random greeting as specified in the bot’s data file</p>
+            
+
+            
+            <div class="method-source-code" id="greeting-source">
+<pre>
+<span class="ruby-comment"># File bot.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">greeting</span>
+  <span class="ruby-comment">#@data[:responses][:greeting][rand(@data[:responses][:greeting].length)]</span>
+  <span class="ruby-identifier">random_response</span> <span class="ruby-value">:greeting</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- greeting-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- greeting-method -->
+
+      
+        <div id="response_to-method" class="method-detail ">
+          <a name="method-i-response_to"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">response_to</span><span
+              class="method-args">(input)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Responds to input text as given by a user</p>
+            
+
+            
+            <div class="method-source-code" id="response_to-source">
+<pre>
+<span class="ruby-comment"># File bot.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">response_to</span>(<span class="ruby-identifier">input</span>)
+  <span class="ruby-identifier">prepared_input</span> = <span class="ruby-identifier">preprocess</span>(<span class="ruby-identifier">input</span>.<span class="ruby-identifier">downcase</span>)
+  <span class="ruby-identifier">sentence</span> = <span class="ruby-identifier">best_sentence</span>(<span class="ruby-identifier">prepared_input</span>)
+  <span class="ruby-identifier">reversed_sentence</span> = <span class="ruby-constant">WordPlay</span>.<span class="ruby-identifier">switch_pronouns</span>(<span class="ruby-identifier">sentence</span>)
+  <span class="ruby-identifier">responses</span> = <span class="ruby-identifier">possible_responses</span>(<span class="ruby-identifier">sentence</span>)
+  <span class="ruby-identifier">responses</span>[<span class="ruby-identifier">rand</span>(<span class="ruby-identifier">responses</span>.<span class="ruby-identifier">length</span>)]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- response_to-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- response_to-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
